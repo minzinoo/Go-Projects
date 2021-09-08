@@ -69,3 +69,27 @@ func getAlbumByID(c *gin.Context) {
 	c.IndentedJSON(http.StatusNotFound, gin.H{"message": "album not found"})
 }
 
+/* CURL commands
+GET
+curl http://localhost:8181/albums \
+    --header "Content-Type: application/json" \
+    --request "GET"
+
+curl http://localhost:8181/albums/1 \
+    --header "Content-Type: application/json" \
+    --request "GET"
+
+POST
+
+curl http://localhost:8181/albums \
+--include \
+--header "Content-Type: application/json" \
+--request "POST" \
+--data '{"id": "7","title": "The Modern Sound of Betty Carter","artist": "Betty Carter","price": 49.99}'
+
+curl http://localhost:8181/albums \
+--include \
+--header "Content-Type: application/json" \
+--request "POST" \
+--data '{"id": "8","title": "City of Glass","artist": "Stan Kenton","price": 19.99}'
+*/
